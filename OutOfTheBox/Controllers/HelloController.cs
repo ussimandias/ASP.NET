@@ -18,5 +18,17 @@ namespace OutOfTheBox.Controllers
         {
             return "Hello World!.. ";
         }
+
+        //Passing Parameters to an Action
+
+        public string HelloName(string name, int howMany)
+        {
+            return "Hello World!.. " + name  +". "  + howMany + " times!";
+        }
+
+	    public string Name(string name, int ID = 1)
+	    {
+		    return HttpUtility.HtmlEncode("Hello World!.. " + name + ". " + ID + " times!");
+	    }
     }
 }
