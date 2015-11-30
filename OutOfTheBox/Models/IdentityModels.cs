@@ -29,5 +29,7 @@ namespace OutOfTheBox.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<OutOfTheBox.Models.Book> Books { get; set; }
     }
 }
