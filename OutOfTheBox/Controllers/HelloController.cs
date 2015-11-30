@@ -9,7 +9,20 @@ namespace OutOfTheBox.Controllers
     public class HelloController : Controller
     {
         // GET: Hello
-        public string Index()
+        public ActionResult Index()
+        {
+	        return View();
+        }
+
+        public ActionResult HelloMyName(string name, int numHellos = 1)
+        {
+	        ViewBag.Message = "Hello " + name;
+	        ViewBag.NumHelloes = numHellos;
+
+	        return View();
+        }
+
+        public string Html()
         {
             return "This is an <b>HTML</b> string..";
         }
