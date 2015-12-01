@@ -15,9 +15,39 @@ namespace OutOfTheBox.Controllers
         private BookDBContext db = new BookDBContext();
 
         // GET: Books
-        public ActionResult Index()
+        public ActionResult Index( string bookGenre, string searchString)
         {
-            return View(db.Books.ToList());
+            //Search by genre: create a genre list
+            var GenreList = new List<string>();
+
+            //Genre Query
+            var GenreQuery = from g in db.Books
+                orderby g.Genre
+                select g.Genre;
+
+            //Tells the Genre list to add the results of the distinct GenreQuery
+            GenreList.AddRange(GenreQuery.Distinct());
+            //...and puts the genre list in a viewbag
+            ViewBag.BookGenre = new SelectList(GenreList); 
+
+            //LINQ query to select Books
+            var books = from b in db.Books
+                select b;
+
+            //Checks to see if the searchString passed in id null or empty
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                //if its not empty then assign result of the LINQ query
+                books = books.Where(s => s.Name.Contains(searchString));
+            }
+
+            if (!string.IsNullOrEmpty(bookGenre))
+            {
+                //if its not empty then assign result of the LINQ query
+                books = books.Where(x => x.Genre == bookGenre);
+            }
+            //return the books that were found in search
+            return View(books);
         }
 
         // GET: Books/Details/5
