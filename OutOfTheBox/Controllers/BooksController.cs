@@ -14,6 +14,20 @@ namespace OutOfTheBox.Controllers
     {
         private BookDBContext db = new BookDBContext();
 
+        public ActionResult BargainBook()
+        {
+            var book = GetBargainBook();
+            return PartialView("_BargainBook", book);
+        }
+
+        private Book GetBargainBook()
+        {
+            return db.Books
+                .OrderBy(b => b.Price)
+                .First();
+        }
+
+
         // GET: Books
         public ActionResult Index( string bookGenre, string searchString)
         {

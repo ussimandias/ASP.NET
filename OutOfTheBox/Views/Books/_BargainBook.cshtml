@@ -1,0 +1,12 @@
+﻿@model OutOfTheBox.Models.Book
+
+<div id="book-details">
+    <p>
+        <strong >Book: </strong>
+        @Model.Name
+    </p>
+    <p>
+        <strong>Price: </strong>
+        @string.Format("{0:F}", @Model.Price)
+    </p>
+</div>
