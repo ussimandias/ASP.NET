@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataDemo", "DataDemo\DataDe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfTheBox", "OutOfTheBox\OutOfTheBox.csproj", "{AF0059FD-75B3-4E22-AB4A-D432DEB92E2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstWebApiProject", "FirstWebApiProject\FirstWebApiProject.csproj", "{11C5FD46-AF09-4D66-B10B-1F0CBF1DE3CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{AF0059FD-75B3-4E22-AB4A-D432DEB92E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF0059FD-75B3-4E22-AB4A-D432DEB92E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF0059FD-75B3-4E22-AB4A-D432DEB92E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11C5FD46-AF09-4D66-B10B-1F0CBF1DE3CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C5FD46-AF09-4D66-B10B-1F0CBF1DE3CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C5FD46-AF09-4D66-B10B-1F0CBF1DE3CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C5FD46-AF09-4D66-B10B-1F0CBF1DE3CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

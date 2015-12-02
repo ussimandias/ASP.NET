@@ -1,0 +1,6 @@
+namespace FirstWebApiProject.Areas.HelpPage.ModelDescriptions
+{
+    public class DictionaryModelDescription : KeyValuePairModelDescription
+    {
+    }
+}
