@@ -1,4 +1,5 @@
-﻿@model IEnumerable<OutOfTheBox.Models.Book>
+﻿@using OutOfTheBox.Models
+@model IEnumerable<OutOfTheBox.Models.Book>
 
 @{
     ViewBag.Title = "Index";
@@ -6,21 +7,36 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<div id="searchResults">
+    <p>
+        @Html.ActionLink("Create New", "Create")
 
-    @using (Html.BeginForm())
-    {
-        <P>
-            Genre: @Html.DropDownList("bookGenre", "All") 
-            Name: @Html.TextBox("SearchString")
-            <br/>
-            <br/>
-            <input type="submit" value="Filter"/>
-        </p>
-    }
+        @using (Html.BeginForm())
+            {
+                <P>
+                    Genre: @Html.DropDownList("bookGenre", "All")
+                    Name: @Html.TextBox("SearchString")
+                    <br/>
+                    <br/>
+                    <input type="submit" value="Filter"/>
+                </p>
+            }
 
-</p>
+        @*@using (Ajax.BeginForm("_BookSearch", "Books",
+        new AjaxOptions
+        {
+            InsertionMode = InsertionMode.InsertAfter,
+            HttpMethod = "Get",
+            LoadingElementId = "ajax-loader",
+            UpdateTargetId = "searchResults"
+        }))
+        {
+            <input type="text" name="query" />
+            <input type="submit" value="Find Title" />
+            <img id="ajax-loader" src="~/Content/Images/9.GIF" style="display:none " />
+        }*@
+    </p>
+</div>
 <table class="table">
     <tr>
         <th>
@@ -62,11 +78,16 @@
 
 </table>
 
+
+
 <div id="bargainBook">
     @Ajax.ActionLink("Click here for the Bargain Book!", "BargainBook",
-        new AjaxOptions{
-            UpdateTargetId="bargainBook",
-            InsertionMode=InsertionMode.Replace,
-            HttpMethod="Get"
+        new AjaxOptions
+        {
+            UpdateTargetId = "bargainBook",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "Get"
         })
 </div>
+
+

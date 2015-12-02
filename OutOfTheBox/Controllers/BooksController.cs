@@ -14,6 +14,19 @@ namespace OutOfTheBox.Controllers
     {
         private BookDBContext db = new BookDBContext();
 
+        //public ActionResult _BookSearch(string query)
+        //{
+        //    var books = GetBooks(query);
+        //    return PartialView(books);
+        //}
+
+        //private List<Book> GetBooks(string query)
+        //{
+        //    return db.Books
+        //        .Where(b => b.Name.Contains(query))
+        //        .ToList();
+        //} 
+
         public ActionResult BargainBook()
         {
             var book = GetBargainBook();
