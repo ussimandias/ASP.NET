@@ -8,8 +8,8 @@ using FirstWebApiProject.Models;
 
 namespace FirstWebApiProject.Controllers
 {
-    [Authorize]
-    public class ProductController : ApiController
+    //[Authorize]
+    public class ValueController : ApiController
     {
         // GET api/values
         public IEnumerable<Product> Get()
